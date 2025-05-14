@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(235, 235, 235);
+    color: #000000;
+}
+
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.login .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.Banner{
+    background-color: #1b1b1b;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    color: white;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;
+}
+
+.Banner img{
+    align-items: center;
+    height: 100%;
+}
+
+.Banner h1{
+    line-height: 82%;
+    font-size: 109px;
+}
+
+.Banner .text-area{
+    background-color: #1b1b1b;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.banner-title h1{
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 87%;
+    margin-bottom: 8px;
+}
+
+.banner-title a{
+    background-color: white;
+    border-radius: 6px;
+    padding: 0px 5px;
+    text-decoration: none;
+}
+.Banner .image-area{
+    background-color: #84a1ff;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.image-area img{
+    width: 70%;
+}
+
+.Product-section{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.product-navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+}
+.product-navigation a{
+    text-decoration: none;
+    color: black;
+}
+
+.product-container{
+    height: 500px;
+    width: 90%;
+}
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: flex-end; 
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    background-color: chocolate;
+    height: 100%;
+    flex: 1; 
+    border-radius: 8px; 
+}
+
+footer {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
