@@ -1,3 +1,11 @@
+<?php
+include 'koneksi.php';
+
+$product = "SELECT * FROM products LIMIT 4";
+$result = $conn->query($product);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +20,7 @@
         <a href="#" class="logo"><img src="assets/logo.png" style="height: 18px;" alt=""></a>
         <nav>
             <a href="#" style="font-weight: 700;">Home</a>
-            <a href="/shop.html">Shop</a>
+            <a href="shop.php">Shop</a>
             <a href="#">Contact</a>
         </nav>
         <a href="#" class="login">log in <span class="dot"></span></a>
@@ -37,10 +45,22 @@
                 <a href="">Show All</a>
             </div>
             <div class="card-container">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <?php
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        echo '<div class="card">';
+                        echo '<div class="card-title">'; 
+                        echo '<h3 class="carde-title">' . ($row["name"] ?? '') . '</h3>';
+                        echo '<p>Rp ' . number_format($row["price"] ?? 0, 0, ',', '.') . '</p>';
+                        // echo '<p>Stok: ' . ($row["stock"] ?? '') . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    
+                } else {
+                    echo '<p>Tidak ada produk ditemukan.</p>';
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -56,10 +76,18 @@
                 <a href="">Show All</a>
             </div>
             <div class="card-container">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <div class="card">
+                    <div class="card-title"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"></div>
+                </div>
+                    <div class="card">
+                        <div class="card-title"></div>
+                    </div>
             </div>
         </div>
     </div>

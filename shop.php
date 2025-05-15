@@ -11,7 +11,7 @@
     <header>
         <a href="#" class="logo"><img src="assets/logo.png" style="height: 18px;" alt=""></a>
         <nav>
-            <a href="/home.html">Home</a>
+            <a href="home.html">Home</a>
             <a href="/shop.html" style="font-weight: 700;"">Shop</a>
             <a href="#">Contact</a>
         </nav>
@@ -25,12 +25,23 @@
                 <div class="navigation">Show All</div>
             </div>
             <div class="card-container">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <?php
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        echo '<div class="card">';
+                        echo '<div class="card-title">'; 
+                        echo '<h3 class="carde-title">' . ($row["name"] ?? '') . '</h3>';
+                        echo '<p>Rp ' . number_format($row["price"] ?? 0, 0, ',', '.') . '</p>';
+                        // echo '<p>Stok: ' . ($row["stock"] ?? '') . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    
+                } else {
+                    echo '<p>Tidak ada produk ditemukan.</p>';
+                }
+                ?>
             </div>
-        </div>
     </div>
 
     <footer>       
